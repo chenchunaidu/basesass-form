@@ -8,7 +8,7 @@ import { BaseFormFields } from "./form-fields";
 import { BaseFormError } from "./error";
 import { BaseFormSubmitButton } from "./submit-button";
 import { cn } from "@/lib/utils";
-import { BaseFormFieldsType, CoreBaseFormFields } from "./types";
+import { BaseFormFieldsType } from "./types";
 
 export interface BaseFormErrorProps {
   property: string;
@@ -17,6 +17,7 @@ export interface BaseFormErrorProps {
 
 export interface BaseFormProps {
   schema: yup.AnyObjectSchema;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   defaultValues?: Record<string, any>;
   errors?: string | BaseFormErrorProps[];
   button?: BaseFormSubmitButton;
