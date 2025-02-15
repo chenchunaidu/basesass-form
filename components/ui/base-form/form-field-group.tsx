@@ -18,7 +18,8 @@ export interface CoreFormFieldGroupProps {
   group: true;
   groupName?: string;
   className?: string;
-  defaultValue?: Record<string, never>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  defaultValue?: Record<string, any>;
   label?: string;
 }
 
