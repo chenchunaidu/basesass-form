@@ -18,7 +18,7 @@ export interface CoreFormFieldGroupProps {
   group: true;
   groupName?: string;
   className?: string;
-  defaultValue?: Record<string, any>;
+  defaultValue?: Record<string, never>;
   label?: string;
 }
 

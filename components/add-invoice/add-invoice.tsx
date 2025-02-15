@@ -6,7 +6,7 @@ import { fromAddress } from "./add-invoice.form.data";
 import { AddInvoiceSchemaType } from "./add-invoice.form.schema";
 
 export const AddInvoice = () => {
-  const [data, setData] = useState<Record<string, any>>();
+  const [data, setData] = useState<Record<string, unknown>>();
 
   return (
     <div className="flex w-full space-x-4">
