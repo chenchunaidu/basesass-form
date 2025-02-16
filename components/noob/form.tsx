@@ -2,14 +2,16 @@
 import React, { FormEvent, useState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { Textarea } from "../ui/textarea";
 
 export const NoobForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [bio, setBio] = useState("");
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    alert(JSON.stringify({ name, email }, null, 2));
+    alert(JSON.stringify({ name, email, bio }, null, 2));
   };
 
   return (
@@ -34,6 +36,12 @@ export const NoobForm = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+          </label>
+        </div>
+        <div>
+          <label>
+            Bio:
+            <Textarea value={bio} onChange={(e) => setBio(e.target.value)} />
           </label>
         </div>
         <Button type="submit">Submit</Button>
