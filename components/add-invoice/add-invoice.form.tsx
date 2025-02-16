@@ -16,24 +16,26 @@ interface AddInvoiceFormProps {
 
 export const AddInvoiceForm = ({ onSubmit }: AddInvoiceFormProps) => {
   return (
-    <div className="border px-6 py-8 rounded-sm shadow-sm bg-white flex-1 space-y-4">
-      <div className="space-y-1">
-        <div className="text-xl font-semibold flex items-center space-x-1">
-          <FileText />
-          <div>Create Invoice</div>
+    <div className="justify-center flex flex-1 p-4">
+      <div className="border px-6 py-8 rounded-sm shadow-sm bg-white space-y-4 md:w-1/2">
+        <div className="space-y-1">
+          <div className="text-xl font-semibold flex items-center space-x-1">
+            <FileText />
+            <div>Create Invoice</div>
+          </div>
+          <div className="text-slate-500 text-sm">
+            Yay! 🥳 congrats on new invoice
+          </div>
         </div>
-        <div className="text-slate-500 text-sm">
-          Yay! 🥳 congrats on new invoice
-        </div>
+        <BaseForm
+          schema={AddInvoiceSchema}
+          fields={AddInvoiceFormData}
+          onSubmit={onSubmit}
+          className="w-full space-y-4"
+          defaultValues={addInvoiceDefaultDetails}
+          button={{ children: "Preview Invoice" }}
+        />
       </div>
-      <BaseForm
-        schema={AddInvoiceSchema}
-        fields={AddInvoiceFormData}
-        onSubmit={onSubmit}
-        className="w-full space-y-4"
-        defaultValues={addInvoiceDefaultDetails}
-        button={{ children: "Preview Invoice" }}
-      />
     </div>
   );
 };
