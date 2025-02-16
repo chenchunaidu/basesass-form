@@ -1,5 +1,7 @@
 "use client";
 import React, { FormEvent, useState } from "react";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 
 export const NoobForm = () => {
   const [name, setName] = useState("");
@@ -7,32 +9,35 @@ export const NoobForm = () => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    alert(`Name: ${name}, Email: ${email}`);
+    alert(JSON.stringify({ name, email }, null, 2));
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>
-          Name:
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <div className="flex justify-center items-center h-[90vh]">
+      <form onSubmit={handleSubmit} className="space-y-4 border p-4 rounded-sm">
+        <div className="font-semibold">Noob Form</div>
+        <div>
+          <label>
+            Name:
+            <Input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Email:
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+        </div>
+        <Button type="submit">Submit</Button>
+      </form>
+    </div>
   );
 };
