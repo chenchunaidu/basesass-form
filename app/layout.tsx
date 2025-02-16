@@ -31,6 +31,7 @@ export default function RootLayout({
         <div className="space-x-4 p-4">
           <Link href="/">Noob</Link>
           <Link href="/rhf">React hook form</Link>
+          <Link href="/base-form-simple">Base form Simple</Link>
           <Link href="/base-form">Base form</Link>
         </div>
         <div>{children}</div>
