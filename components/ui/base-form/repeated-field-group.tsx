@@ -28,15 +28,7 @@ const Actions = ({ label, append, remove }: ActionsProps) => {
           },
         ]}
       >
-        {/* <Button
-          variant="ghost"
-          size="sm"
-          onClick={(e) => {
-            e.preventDefault();
-          }}
-        > */}
         <EllipsisVertical className="w-4 h-4 text-gray-500" />
-        {/* </Button> */}
       </BaseDropdownMenu>
     </div>
   );
