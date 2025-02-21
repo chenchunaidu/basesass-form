@@ -87,7 +87,7 @@ export const RepeatedInputGroup = ({
             <Actions
               label={label}
               append={() => append(defaultValue)}
-              remove={remove}
+              remove={() => remove(index)}
             />
           </div>
         );
