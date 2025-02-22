@@ -2,13 +2,13 @@ import * as yup from "yup";
 
 export const TaxSchema = yup.object({
   taxType: yup.string(),
-  taxPercentage: yup.string().required("Tax percentage is required"),
+  taxPercentage: yup.number().required("Tax percentage is required"),
 });
 
 export const InvoiceItemsSchema = yup.object({
   name: yup.string().required("Item name is required"),
-  quantity: yup.string().required("Quantity is required"),
-  price: yup.string().required("Price is required"),
+  quantity: yup.number().required("Quantity is required"),
+  price: yup.number().required("Price is required"),
   taxItems: yup.array(TaxSchema),
   description: yup.string(),
 });
