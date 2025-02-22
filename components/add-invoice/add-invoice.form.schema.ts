@@ -2,7 +2,7 @@ import * as yup from "yup";
 
 export const TaxSchema = yup.object({
   taxType: yup.string(),
-  taxPercentage: yup.string(),
+  taxPercentage: yup.string().required("Tax percentage is required"),
 });
 
 export const InvoiceItemsSchema = yup.object({
